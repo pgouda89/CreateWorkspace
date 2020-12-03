@@ -1,0 +1,1 @@
+infamvn component:eclipse -nsu  -Dmaven.test.skip=true -DgenPseudoLocale=true -Ddirectory=%PLATFORM_DIR% -DeclipseLocation=C:\Softwares\eclipse_462 %*

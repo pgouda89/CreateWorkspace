@@ -1,0 +1,1 @@
+infamvn component:generate-poms-promoted -N -DmavenOnly=true -DhonorProfiles=true -DactiveProfiles=mainprofile,win64-platform-profile,devel-build-config,cpp,sapruntime,shapptools,buildtools,buildsymphony,buildMachine,BuildMachineTests,toolsPlatform,assembly,CAT -e 

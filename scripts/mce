@@ -1,0 +1,1 @@
+infamvn component:eclipse -PCAT -nsu  -DgenPseudoLocale=true -Ddirectory=$PLATFORM_DIR $*

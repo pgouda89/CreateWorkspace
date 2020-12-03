@@ -1,0 +1,2 @@
+#!/bin/sh
+mvn -s "$SETTINGS_FILE" -Dinfa.platform=Linux.64 -Dinfa.nativeDir=$INFA_NATIVEDIR -DbuildLocation=$MVN_REPO/buildLocation -Dinfa.build_config=RELEASE -Dinfa.build_package=DEVEL  -e $*

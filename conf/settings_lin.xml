@@ -1,0 +1,108 @@
+<settings>
+
+	<localRepository>${env.MVN_REPO}</localRepository>
+	<servers>
+		<server>
+			<id>infa-maven-releases</id>
+			<username>anonymous</username>
+			<password>user@informatica.com</password>
+		</server>
+		<server>
+			<id>infa-maven-snapshots</id>
+			<username>anonymous</username>
+			<password>user@informatica.com</password>
+		</server>
+	</servers>
+
+	<mirrors>
+		<mirror>
+			<id>internal-repository</id>
+			<name>Maven-proxy running on maven.informatica.com</name>
+			<url>${env.INFA_MVN_REPO}</url>
+			<mirrorOf>*</mirrorOf>
+		</mirror>
+	</mirrors>
+
+	<profiles>    
+		
+
+		<profile>
+			<id>linux64-platform-profile</id>
+			<properties>
+				<infa.nativeDir>${env.INFA_NATIVEDIR}</infa.nativeDir>
+				<infa.platform>Linux.64</infa.platform>
+				<infa.build_package>DEVEL</infa.build_package>
+			</properties>
+		</profile>
+
+
+		<profile>
+			<id>debug-build-config</id>
+			<properties>
+				<infa.build_config>DEBUG</infa.build_config>
+				<infa.build_package>DEBUG</infa.build_package>
+				</properties>
+		</profile>
+
+		<profile>
+			<id>execution-build-config</id>
+			<properties>
+				<infa.build_config>DEBUG</infa.build_config>
+				<infa.build_package>EXEC</infa.build_package>
+			</properties>
+		</profile>    
+
+		<profile>
+			<id>devel-build-config</id>
+			<properties>
+				<infa.build_config>RELEASE</infa.build_config>                      
+				<infa.build_package>DEVEL</infa.build_package>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>mainprofile</id>
+			<repositories>
+				<repository>
+					<id>infa-maven-releases</id>
+					<name>Informatica Maven Repository (Releases)</name>
+					<url>${env.INFA_MVN_REPO}</url>
+					<!-- If uncommented, this section prevents Maven from downloading newer snapshot builds -->
+					<snapshots>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+
+			<pluginRepositories>
+				<pluginRepository>
+					<id>infa-maven-releases</id>
+					<name>Informatica Maven Repository (Releases)</name>
+					<url>${env.INFA_MVN_REPO}</url>
+					<!-- If uncommented, this section prevents Maven from downloading newer snapshot builds -->
+					<snapshots>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+		
+		
+	</profiles>
+	
+    <pluginGroups>
+		<pluginGroup>com.atlassian.maven.plugins</pluginGroup>
+    <pluginGroup>com.informatica.devops</pluginGroup>
+    </pluginGroups>
+
+	<!--
+	Any profile you want to activate by default should be mentioned below
+	<activeProfile>profile-id</activeProfile>
+	-->
+	<activeProfiles>
+	    <activeProfile>cpp</activeProfile>
+		<activeProfile>mainprofile</activeProfile>
+		<activeProfile>devel-build-config</activeProfile>
+		<activeProfile>linux64-platform-profile</activeProfile>
+	</activeProfiles>
+</settings>

@@ -1,0 +1,2 @@
+#!/bin/sh
+infamvn component:generate-poms-promoted -N -Dinfa.platform=Linux.64 -Dinfa.build_package=DEVEL -Dinfa.build_config=RELEASE -fae

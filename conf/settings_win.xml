@@ -1,0 +1,60 @@
+<settings>
+	<localRepository>${env.MVN_REPO}</localRepository>
+	<mirrors>
+		<mirror>
+			<id>internal-repository</id>
+			<name>Maven-proxy runnon on maven.informatica.com</name>
+			<url>${env.INFA_MVN_REPO}</url>
+			<mirrorOf>*</mirrorOf>
+		</mirror>
+	</mirrors>
+	<profiles>
+		<profile>
+			<id>win64-platform-profile</id>
+			<properties>
+				<infa.nativeDir>${env.INFA_NATIVEDIR}</infa.nativeDir>
+				<infa.platform>WIN64</infa.platform>
+				<infa.build_package>DEVEL</infa.build_package>
+			</properties>
+		</profile>
+		<profile>
+			<id>tools-locations</id>
+			<properties>
+				<eclipseInstall>${env.ECLIPSE_LOC}</eclipseInstall>
+				<buildLocation>${env.BUILD_LOCATION}</buildLocation>
+				<skipRenaming>true</skipRenaming>
+			</properties>
+		</profile>
+		<profile>
+			<id>mainprofile</id>
+			<repositories>
+				<repository>
+					<id>infa-maven-releases</id>
+					<name>Informatica Maven Repository (Releases)</name>
+					<url>${env.INFA_MVN_REPO}</url>
+					<snapshots>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>infa-maven-releases</id>
+					<name>Informatica Maven Repository (Releases)</name>
+					<url>${env.INFA_MVN_REPO}</url>
+					<snapshots>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+	<pluginGroups>
+		<pluginGroup>com.atlassian.maven.plugins</pluginGroup>
+		<pluginGroup>com.informatica.devops</pluginGroup>
+	</pluginGroups>
+	<activeProfiles>
+		<activeProfile>mainprofile</activeProfile>
+		<activeProfile>win64-platform-profile</activeProfile>
+	</activeProfiles>
+</settings>
