@@ -1,8 +1,6 @@
 ### CreateWorkspace
 Utility to create Informatica DEI workspace.
 
-##### Table of Contents  
-[Pre requisites](#Pre requisites)  <a name="Pre requisites"/>
 #### Pre requisites
 ##### JAVA
 You need to install/copy java JDK and make sure you have JAVA_HOME environmental variable is available.
