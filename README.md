@@ -1,8 +1,15 @@
 ### CreateWorkspace
 Utility to create Informatica Data Engineering developement workspace.
-Capabilities:
+What to expect from the Utility:
    1. Create new workspace
-   2. Update the existing workspace to specified build
+   2. Update an existing workspace to a specified build
+   3. Creates a script file to configure console environmental variables
+   4. Configurs shortcuts to perform
+      a. Pom generation
+      b. Maven install
+      c. Maven component eclipse
+   5. Works for both Windows and Linux machine.
+  
 
 **Table of Contents**  
 
