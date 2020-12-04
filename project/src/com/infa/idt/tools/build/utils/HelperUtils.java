@@ -64,10 +64,10 @@ public class HelperUtils {
 			argDetails += "\n\t\t" + arg.getDescription();
 		}
 		String manual = "Usage:  " + Constansts.SETUP_SCRIPT_NAME + getScriptExtention(osType)
-				+ " -Drelease=<ReleaseVersion> -D<optionalArg1>=<value1> -D<optionalArg2>=<value2> ...\n"
+				+ " -Drelease=<ReleaseVersion>  -Dcomponents=<components> -D<optionalArg1>=<value1> -D<optionalArg2>=<value2> ...\n"
 				+ "\nWhere optional arguments include:\n\t" + argDetails + "\n\nExample command: "
 				+ Constansts.SETUP_SCRIPT_NAME + getScriptExtention(osType)
-				+ " -Drelease=10.4.0 -DbuildNo=107 -Dcomponents=dtm.ldtm -Dp4User=<user> -Dp4Client=<Client name> -DjavaHome=<javaJdkHome> -DmvnHome=<mvnHomeLocation> -Dp4Sync=YES -DplatformDir=<Platform directory>";
+				+ " -Drelease=10.5.0 -DbuildNo=LATEST -Dcomponents=dtm.ldtm -Dp4User=<user> -Dp4Client=<Client name> -DjavaHome=<javaJdkHome> -DmvnHome=<mvnHomeLocation> -Dp4Sync=YES -DplatformDir=<Platform directory>";
 		System.out.println(manual);
 		System.exit(0);
 	}
