@@ -20,11 +20,13 @@ public class BuildWorkspace {
 		String OS = SystemPropertyProvider.getProperty("os.name", null, "Linux");
 		OsType osType = OsType.getOsType(OS);
 		String release = SystemPropertyProvider.getProperty(Argument.release.getName());
+		String components = SystemPropertyProvider.getProperty(Argument.components.getName());
 
 		if (arguments.length > 0 && arguments[0].equalsIgnoreCase("--help")) {
 			HelperUtils.printManPage(osType);
-		} else if (HelperUtils.isEmptyOrNull(release)) {
-			System.out.println("Invaild arguments. -Drelease=<ReleaseVersion> is a mandatory argument.");
+		} else if (HelperUtils.isEmptyOrNull(release) || HelperUtils.isEmptyOrNull(components)) {
+			System.out.println(
+					"Invaild arguments. -Drelease=<ReleaseVersion> and -Dcomponents=<components> are mandatory the arguments.");
 			HelperUtils.printManPage(osType);
 		}
 		try {
