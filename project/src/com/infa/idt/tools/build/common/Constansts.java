@@ -45,4 +45,8 @@ public class Constansts {
 	public static final String P4USER = "P4USER";
 	
 	public static final String P4SYNC = "P4SYNC";
+	
+	public static final String DEFAULT_BUILD_NO = "LATEST";
+	
+	public static final String P4_SYNC_NO = "NO";
 }
