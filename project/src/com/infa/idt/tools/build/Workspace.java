@@ -60,11 +60,12 @@ public class Workspace {
 			throw new InvalidArgumentException("mvnHome is missing in the argument line.");
 		}
 
-		this.buildNo = SystemPropertyProvider.getProperty(Argument.buildNo.getName(), null, "LATEST");
+		this.buildNo = SystemPropertyProvider.getProperty(Argument.buildNo.getName(), null,
+				Constansts.DEFAULT_BUILD_NO);
 
 		this.platformDir = SystemPropertyProvider.getProperty(Argument.platformDir.getName(), null, null);
 
-		this.p4Sync = SystemPropertyProvider.getProperty(Argument.p4Sync.getName(), null, "NO");
+		this.p4Sync = SystemPropertyProvider.getProperty(Argument.p4Sync.getName(), null, Constansts.P4_SYNC_NO);
 
 		this.p4User = SystemPropertyProvider.getProperty(Argument.p4User.getName(), Constansts.P4USER, null);
 
