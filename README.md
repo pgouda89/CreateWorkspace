@@ -1,14 +1,15 @@
 ### CreateWorkspace
-Utility to create Informatica Data Engineering developement workspace.
+Utility to create Informatica Data Engineering development workspace.
 What to expect from the Utility:
-   1. Create new workspace
-   2. Update an existing workspace to a specified build
-   3. Creates a script file to configure console environmental variables
-   4. Configurs shortcuts to perform
+   1. Development Workspace
+      a. Create New
+      b. Update an existing workspace with a specified build number
+   2. Creates a script file to configure console environmental variables
+   3. Configures shortcuts to perform
       a. Pom generation
       b. Maven install
       c. Maven component eclipse
-   5. Works for both Windows and Linux machine.
+   4. Works for both Windows and Linux machines.
   
 
 **Table of Contents**  
@@ -36,13 +37,13 @@ Linux:
     export JAVA_HOME=<JAVA location on Linux machine>
     export PATH=$JAVA_HOME/bin:$PATH
   
-Run the following command in command line interface after setting the required environmental variables to check the java version:
+Run the following command in the command line interface after setting the required environment variables to check the java version:
 
     java -version
 
 ##### Apache Maven
-Required to install Apache maven 3.0 or above version.
-Set the following environmental variables to handle command line interface:
+Required to install Apache Maven 3.0 or above version.
+Set the following environment variables to handle the command line interface:
 
 Windows:
 
@@ -54,26 +55,29 @@ Linux:
     export MVN_HOME=<Maven location on Linux machine>
     export PATH=$MVN_HOME/bin:$PATH
 
-Run the following command in command line interface after setting the required environmental variables to check the maven version:
+Run the following command in the command line interface after setting the required environment variables to check the maven version:
 
     mvn -version
 
 ##### Perforce
-CreateWorkspace utility uses the perforce command line interface. P4v needs to be configured and you should have valid credentails.
+CreateWorkspace utility uses the perforce command-line interface. P4v needs to be configured and you should have valid credentials.
 
-Run the following command in command line interface to verify perforce command availability:
+Run the following command in the command-line interface to verify perforce command availability:
 
     p4 help
     
 #### Getting started
-Download/clone the project from github. 
+Download/clone the project from GitHub. 
 
 ##### Before setup script
-a. Make sure conf/perforceMap.properties has an entry for the Informatica product version you want to build.
-b. 
+Here is the checklists before executing setup script.
+   1. conf/perforceMap.properties should have an entry for the Informatica product version you want to build.
+   2. Connect to Informatica VPN
+   3. Make sure you have logged-in to the perforce account and perforce client is configured right.
+   4. All the [Pre requisites](#pre-requisites) are available
 
 ##### Execute setup script
-Execute the following command to list all command line arguments that the setup script supports:
+Execute the following command to list all command-line arguments that the setup script supports:
 
 Windows:
 
@@ -102,8 +106,8 @@ Example Command:
 
 ##### Post Setup script
 After the successful setup script execution
-a. Windows - A batch script under %USERPROFILE%\Desktop\<release>\.
-b. Linux - A shell script under $HOME directory.
+   1. Windows - A batch script under the %USERPROFILE%\Desktop\<release>\ directory.
+   2. Linux - A shell script under the $HOME directory.
 
 The following shortcut scripts are already configured:
 
